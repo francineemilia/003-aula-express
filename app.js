@@ -4,13 +4,13 @@ const app = express();
 app.use(express.json())
 
 app.get('/products',(req,res) => {
-    res.status('200').json(products);
+    res.status(200).json(products);
 });
 
 app.get('/products/:id', (req,res) =>{
     const {id} = req.params;
     const product = products.find ((product) => product.id === Number(id));
-    res.status('200').json(product);
+    res.status(200).json(product);
 });
 
 app.post('/products', (req, res) => {
